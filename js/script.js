@@ -1,6 +1,40 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+// ========== MOBILE DRAWER MENU FUNCTIONALITY ==========
+(function initMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const closeBtn = document.getElementById('drawerCloseBtn');
+    
+    if (!menuBtn || !drawer || !overlay) return;
+    
+    function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    menuBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+            closeDrawer();
+        }
+    });
+})();
+
+// ========== THREE.JS 3D CRYSTAL VISUALIZATION ==========
 const container = document.getElementById('canvas-container');
 const scene = new THREE.Scene();
 scene.background = null;
@@ -282,4 +316,4 @@ window.addEventListener('resize', () => {
     controls.enablePan = false;
 });
 
-console.log('💜 PURPLE SUI | Hamburger Menu Visible | Optimized Particle Density | Crystal Core Elegant');
+console.log('💜 PURPLE SUI | Optimized Particle Density | Crystal Core Elegant');
