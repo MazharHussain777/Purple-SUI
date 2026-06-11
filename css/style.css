@@ -49,6 +49,27 @@
     --gradient-highlight: linear-gradient(135deg, #C084FC, #9333EA);
     --gradient-primary: linear-gradient(105deg, #8B5CF6, #5B21B6);
     --gradient-primary-hover: linear-gradient(105deg, #A855F7, #6D28D9);
+
+    /* ADDITIONAL VARIABLES FOR HARDCODED COLORS REPLACEMENT */
+    --border-drawer-top: rgba(156, 66, 255, 0.2);
+    --overlay-bg: rgba(0, 0, 0, 0.75);
+    --drawer-shadow: rgba(0, 0, 0, 0.8);
+    --border-nav: rgba(156, 66, 255, 0.5);
+    --border-mobile-btn: rgba(156, 66, 255, 0.8);
+    --bg-mobile-btn: rgba(156, 66, 255, 0.25);
+    --bg-mobile-btn-hover: rgba(156, 66, 255, 0.45);
+    --drawer-bg: rgba(8, 3, 20, 0.98);
+    --border-drawer: rgba(156, 66, 255, 0.8);
+    --border-drawer-link: rgba(156, 66, 255, 0.3);
+    --border-drawer-link-hover: var(--purple-neon);
+    --border-footer-note: rgba(156, 66, 255, 0.2);
+    --shadow-nav: rgba(0, 0, 0, 0.3);
+    --border-outline-nav: rgba(156, 66, 255, 0.8);
+    --border-outline: rgba(156, 66, 255, 0.85);
+    --badge-border: rgba(156, 66, 255, 0.5);
+    --badge-bg: rgba(156, 66, 255, 0.15);
+    --scrollbar-track: var(--bg-radial-mid);
+    --scrollbar-thumb: var(--purple-secondary);
 }
 
 * {
@@ -161,8 +182,8 @@ body {
     backdrop-filter: blur(28px);
     background: var(--bg-glass);
     border-radius: 100px;
-    border: 1px solid var(--border-purple);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-nav);
+    box-shadow: 0 8px 32px var(--shadow-nav);
     gap: 20px;
 }
 
@@ -217,8 +238,8 @@ body {
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
-    background: rgba(156, 66, 255, 0.25);
-    border: 1px solid var(--border-purple-light);
+    background: var(--bg-mobile-btn);
+    border: 1px solid var(--border-mobile-btn);
     border-radius: 50px;
     width: 44px;
     height: 44px;
@@ -231,7 +252,7 @@ body {
 }
 
 .mobile-menu-btn:hover {
-    background: rgba(156, 66, 255, 0.45);
+    background: var(--bg-mobile-btn-hover);
     transform: scale(1.05);
     border-color: var(--purple-neon);
 }
@@ -261,10 +282,10 @@ body {
     max-width: 340px;
     height: 100vh;
     z-index: 2000;
-    background: rgba(8, 3, 20, 0.98);
+    background: var(--drawer-bg);
     backdrop-filter: blur(32px);
-    border-left: 2px solid var(--border-purple-light);
-    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.8);
+    border-left: 2px solid var(--border-drawer);
+    box-shadow: -10px 0 50px var(--drawer-shadow);
     transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     display: flex;
     flex-direction: column;
@@ -308,7 +329,7 @@ body {
     text-decoration: none;
     letter-spacing: -0.02em;
     transition: 0.2s;
-    border-bottom: 1px solid rgba(156, 66, 255, 0.3);
+    border-bottom: 1px solid var(--border-drawer-link);
     padding-bottom: 12px;
     display: inline-block;
 }
@@ -316,7 +337,7 @@ body {
 .drawer-nav-links a:hover {
     color: var(--purple-neon);
     padding-left: 12px;
-    border-bottom-color: var(--purple-neon);
+    border-bottom-color: var(--border-drawer-link-hover);
 }
 
 .drawer-buttons {
@@ -335,7 +356,7 @@ body {
 .drawer-footer-note {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid rgba(156, 66, 255, 0.2);
+    border-top: 1px solid var(--border-footer-note);
     font-size: 0.7rem;
     color: var(--text-badge);
     text-align: center;
@@ -352,7 +373,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    background: var(--overlay-bg);
     backdrop-filter: blur(8px);
     z-index: 1999;
     opacity: 0;
@@ -408,7 +429,7 @@ body {
 
 .btn-outline-nav {
     background: var(--bg-outline);
-    border: 1px solid var(--border-purple-light);
+    border: 1px solid var(--border-outline-nav);
     color: var(--text-badge);
 }
 
@@ -435,9 +456,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: var(--bg-badge);
+    background: var(--badge-bg);
     backdrop-filter: blur(4px);
-    border: 1px solid var(--border-purple);
+    border: 1px solid var(--badge-border);
     padding: 6px 20px;
     border-radius: 100px;
     font-size: 0.7rem;
@@ -509,7 +530,7 @@ h1 {
 
 .btn-outline {
     background: var(--bg-outline);
-    border: 1px solid var(--border-purple-soft);
+    border: 1px solid var(--border-outline);
     color: var(--text-soft);
     backdrop-filter: blur(8px);
 }
@@ -1256,11 +1277,11 @@ button, .btn-primary, .btn-outline, .nav-links a, .mobile-menu-btn {
     }
     
     ::-webkit-scrollbar-track {
-        background: var(--bg-radial-mid);
+        background: var(--scrollbar-track);
     }
     
     ::-webkit-scrollbar-thumb {
-        background: var(--purple-secondary);
+        background: var(--scrollbar-thumb);
         border-radius: 10px;
     }
 }
