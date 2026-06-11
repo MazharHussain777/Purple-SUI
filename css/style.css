@@ -813,18 +813,19 @@ h1 {
     
     .model-right {
         order: 1;
-        min-height: 45vh;
+        min-height: 61vh;
         margin-top: 85px;
     }
     
     #canvas-container {
-        height: 48vh;
-        min-height: 380px;
+        height: 71vh;
+        min-height: 311px;
+        margin-bottom: -71px;
     }
     
     .content-left {
         order: 2;
-        padding: 30px 5% 60px;
+        padding: 7px 5% 60px;
     }
     
     .hero-card {
@@ -896,6 +897,7 @@ h1 {
     #canvas-container {
         height: 44vh;
         min-height: 340px;
+        margin-bottom: -51px;
     }
     
     .content-left {
