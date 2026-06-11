@@ -1,4 +1,4 @@
-/* ========== COLOR VARIABLES ========== */
+/* ========== ENHANCED COLOR VARIABLES ========== */
 :root {
     /* Background Colors */
     --bg-radial-start: #1a0a2e;
@@ -8,7 +8,7 @@
     --bg-unified-mid: #070011;
     --bg-unified-end: #000000;
     
-    /* Purple Theme Colors */
+    /* Purple Theme Colors - ENHANCED */
     --purple-primary: #8B5CF6;
     --purple-primary-dark: #5B21B6;
     --purple-primary-light: #A855F7;
@@ -72,6 +72,205 @@
     --scrollbar-thumb: var(--purple-secondary);
 }
 
+/* ========== PREMIUM CUSTOM SCROLLBAR - PURPLE ROLLBAR ========== */
+/* WebKit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #1a0a2e, #0a0314);
+    border-radius: 20px;
+    margin-block: 4px;
+    border: 1px solid rgba(156, 66, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #C084FC, #7C3AED, #A855F7);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1), 0 0 8px rgba(156, 66, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #D8B4FE, #8B5CF6, #C084FC);
+    box-shadow: 0 0 12px rgba(156, 66, 255, 0.8), inset 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #A855F7, #5B21B6, #9333EA);
+    box-shadow: 0 0 16px rgba(156, 66, 255, 1);
+}
+
+/* Scrollbar Corner (for resizing) */
+::-webkit-scrollbar-corner {
+    background: linear-gradient(135deg, #1a0a2e, #020004);
+    border-radius: 0;
+}
+
+/* ========== FIREFOX SCROLLBAR (Cross-browser support) ========== */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #7C3AED #1a0a2e;
+}
+
+/* Enhanced Firefox scrollbar with custom colors */
+@supports (scrollbar-color: auto) {
+    * {
+        scrollbar-color: #C084FC #0a0314;
+        scrollbar-width: thin;
+    }
+}
+
+/* ========== ANIMATED SCROLLBAR EFFECT (Extra polish) ========== */
+/* Adds a subtle glow animation on hover for WebKit */
+@media (prefers-reduced-motion: no-preference) {
+    ::-webkit-scrollbar-thumb {
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        transform: scaleX(1.05);
+    }
+}
+
+/* ========== DARK MODE SCROLLBAR VARIANT ========== */
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(180deg, #0a0314, #020004);
+        border-color: rgba(156, 66, 255, 0.3);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #A855F7, #6D28D9, #7C3AED);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #C084FC, #8B5CF6, #A855F7);
+    }
+}
+
+/* ========== HIDE SCROLLBAR ON MOBILE BUT KEEP FUNCTIONAL ========== */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: rgba(10, 5, 25, 0.5);
+        margin-block: 2px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #8B5CF6, #5B21B6);
+        border-radius: 20px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #A855F7, #7C3AED);
+    }
+    
+    /* Hide but keep functional for minimal design */
+    @media (max-width: 480px) {
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #7C3AED;
+        }
+    }
+}
+
+/* ========== CUSTOM SCROLLBAR FOR MODAL/DRAWER ========== */
+.mobile-drawer::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mobile-drawer::-webkit-scrollbar-track {
+    background: rgba(10, 5, 25, 0.6);
+    border-radius: 20px;
+    margin-block: 8px;
+    border: 1px solid rgba(156, 66, 255, 0.15);
+}
+
+.mobile-drawer::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #C084FC, #7C3AED);
+    border-radius: 20px;
+    box-shadow: 0 0 4px rgba(156, 66, 255, 0.4);
+}
+
+.mobile-drawer::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #D8B4FE, #8B5CF6);
+}
+
+/* Firefox scrollbar for drawer */
+.mobile-drawer {
+    scrollbar-width: thin;
+    scrollbar-color: #C084FC rgba(10, 5, 25, 0.6);
+}
+
+/* ========== CANVAS CONTAINER SCROLL OVERRIDE ========== */
+#canvas-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+#canvas-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#canvas-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #A855F7, #6D28D9);
+    border-radius: 20px;
+}
+
+/* ========== ADDITIONAL SCROLLBAR ENHANCEMENTS ========== */
+/* Smooth scrolling for entire page */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Active scrollbar indicator */
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #C084FC, #7C3AED, #A855F7);
+    border-radius: 20px;
+}
+
+/* Scrollbar for overflow containers */
+.overflow-auto, .overflow-scroll {
+    scrollbar-width: thin;
+}
+
+.overflow-auto::-webkit-scrollbar, 
+.overflow-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.overflow-auto::-webkit-scrollbar-track,
+.overflow-scroll::-webkit-scrollbar-track {
+    background: rgba(10, 5, 25, 0.4);
+    border-radius: 20px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb,
+.overflow-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8B5CF6, #5B21B6);
+    border-radius: 20px;
+}
+
+/* ========== EXTRA PREMIUM TOUCH: RAINBOW PURPLE GLOW ON HOVER ========== */
+@media (min-width: 1024px) {
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #E9D5FF, #C084FC, #A855F7, #7C3AED);
+        box-shadow: 0 0 20px rgba(192, 132, 252, 0.6), inset 0 0 6px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* ========== KEEP EXISTING STYLES BELOW ========== */
 * {
     margin: 0;
     padding: 0;
@@ -762,6 +961,10 @@ h1 {
     
     .model-right {
         flex: 0.9;
+    }
+        #canvas-container {
+        height: 81vh;
+       
     }
     
     .hero-card {
