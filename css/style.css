@@ -928,12 +928,28 @@ h1 {
     }
 }
 
-/* Small Mobile devices (376px to 480px) */
-@media (min-width: 376px) and (max-width: 480px) {
+/* ========== SMALL MOBILE DEVICES (322px to 480px) ========== */
+@media (min-width: 322px) and (max-width: 480px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: none !important;
+    }
+    
+    .nav-buttons {
+        display: none !important;
+    }
+    
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+    
     .navbar {
-        width: 94%;
+        width: 92%;
         padding: 8px 16px;
-        top: 15px;
+        top: 12px;
     }
     
     .logo {
@@ -950,52 +966,74 @@ h1 {
         height: 14px;
     }
     
+    .hamburger-icon div {
+        height: 2px;
+    }
+    
     .model-right {
-        margin-top: 75px;
+        order: 1;
+        min-height: 35vh;
+        margin-top: 70px;
     }
     
     #canvas-container {
-        height: 40vh;
-        min-height: 300px;
+        height: 38vh;
+        min-height: 280px;
+    }
+    
+    .content-left {
+        order: 2;
+        padding: 20px 4% 45px;
     }
     
     .hero-card {
         padding: 28px 18px;
+        text-align: center;
+        border-radius: 36px;
     }
     
     h1 {
         font-size: 1.7rem;
-        margin-bottom: 18px;
+        text-align: center;
+        margin-bottom: 16px;
     }
     
     .badge {
-        font-size: 0.55rem;
+        font-size: 0.6rem;
         gap: 6px;
-        padding: 4px 12px;
+        padding: 4px 14px;
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .badge .icon-svg {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
     }
     
     .description {
         font-size: 0.85rem;
-        line-height: 1.5;
+        line-height: 1.55;
         margin-bottom: 28px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
     
     .cta-group {
-        gap: 12px;
+        justify-content: center;
+        gap: 14px;
+        flex-direction: row;
     }
     
     .btn-primary, .btn-outline {
         padding: 9px 20px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        gap: 8px;
     }
     
-    .btn-primary .icon-svg, .btn-outline .icon-svg {
+    .icon-svg {
         width: 14px;
         height: 14px;
     }
@@ -1003,11 +1041,12 @@ h1 {
     .mobile-drawer {
         width: 80%;
         max-width: 280px;
-        padding: 85px 18px 30px;
+        padding: 80px 20px 30px;
     }
     
     .drawer-nav-links {
         gap: 22px;
+        margin-top: 20px;
     }
     
     .drawer-nav-links a {
@@ -1015,30 +1054,56 @@ h1 {
         padding-bottom: 10px;
     }
     
+    .drawer-buttons {
+        margin-top: 24px;
+        gap: 12px;
+    }
+    
     .drawer-buttons .btn-outline-nav,
     .drawer-buttons .btn-primary-nav {
-        padding: 7px 18px;
-        font-size: 0.75rem;
+        padding: 10px 20px;
+        font-size: 0.8rem;
     }
     
     .drawer-close {
         top: 18px;
         right: 18px;
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .drawer-close svg {
+        width: 18px;
+        height: 18px;
     }
 }
 
-/* Extra Small Mobile / Tiny Phones (up to 375px) */
-@media (max-width: 375px) {
+/* ========== EXTRA SMALL MOBILE DEVICES (Up to 321px) ========== */
+@media (max-width: 321px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: none !important;
+    }
+    
+    .nav-buttons {
+        display: none !important;
+    }
+    
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+    
     .navbar {
-        width: 95%;
-        padding: 7px 14px;
-        top: 12px;
+        width: 94%;
+        padding: 6px 14px;
+        top: 10px;
     }
     
     .logo {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .mobile-menu-btn {
@@ -1052,50 +1117,63 @@ h1 {
     }
     
     .hamburger-icon div {
-        height: 2px;
+        height: 1.8px;
     }
     
     .model-right {
-        margin-top: 70px;
+        order: 1;
+        min-height: 32vh;
+        margin-top: 65px;
     }
     
     #canvas-container {
-        height: 38vh;
-        min-height: 260px;
+        height: 35vh;
+        min-height: 250px;
     }
     
     .content-left {
-        padding: 20px 4% 40px;
+        order: 2;
+        padding: 15px 3% 40px;
     }
     
     .hero-card {
-        padding: 24px 14px;
+        padding: 22px 14px;
+        text-align: center;
+        border-radius: 32px;
     }
     
     h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 14px;
+        line-height: 1.25;
     }
     
     .badge {
-        font-size: 0.5rem;
+        font-size: 0.55rem;
         gap: 5px;
-        padding: 3px 10px;
+        padding: 3px 12px;
         margin-bottom: 18px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .badge .icon-svg {
-        width: 9px;
-        height: 9px;
+        width: 10px;
+        height: 10px;
     }
     
     .description {
-        font-size: 0.8rem;
-        line-height: 1.45;
+        font-size: 0.75rem;
+        line-height: 1.5;
         margin-bottom: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
     
     .cta-group {
+        justify-content: center;
         gap: 10px;
         flex-direction: column;
         align-items: stretch;
@@ -1103,24 +1181,25 @@ h1 {
     
     .btn-primary, .btn-outline {
         padding: 8px 16px;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        gap: 6px;
         justify-content: center;
     }
     
-    .btn-primary .icon-svg, .btn-outline .icon-svg {
-        width: 13px;
-        height: 13px;
+    .icon-svg {
+        width: 12px;
+        height: 12px;
     }
     
     .mobile-drawer {
         width: 85%;
         max-width: 260px;
-        padding: 80px 16px 25px;
+        padding: 75px 18px 25px;
     }
     
     .drawer-nav-links {
         gap: 18px;
-        margin-top: 20px;
+        margin-top: 18px;
     }
     
     .drawer-nav-links a {
@@ -1130,80 +1209,31 @@ h1 {
     
     .drawer-buttons {
         margin-top: 20px;
-        gap: 12px;
+        gap: 10px;
     }
     
     .drawer-buttons .btn-outline-nav,
     .drawer-buttons .btn-primary-nav {
-        padding: 6px 14px;
-        font-size: 0.7rem;
-    }
-    
-    .drawer-close {
-        top: 16px;
-        right: 16px;
-        width: 34px;
-        height: 34px;
-    }
-    
-    .drawer-close svg {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-/* iPhone SE / very tiny devices (up to 320px) */
-@media (max-width: 320px) {
-    .logo {
-        font-size: 0.85rem;
-    }
-    
-    .mobile-menu-btn {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .hamburger-icon {
-        width: 14px;
-        height: 11px;
-    }
-    
-    h1 {
-        font-size: 1.3rem;
-    }
-    
-    .hero-card {
-        padding: 20px 12px;
-    }
-    
-    .badge {
-        font-size: 0.45rem;
-        gap: 4px;
-        padding: 2px 8px;
-    }
-    
-    .description {
+        padding: 8px 16px;
         font-size: 0.75rem;
     }
     
-    .btn-primary, .btn-outline {
-        padding: 7px 14px;
-        font-size: 0.7rem;
+    .drawer-footer-note {
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 0.6rem;
     }
     
-    #canvas-container {
-        height: 35vh;
-        min-height: 230px;
+    .drawer-close {
+        top: 15px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
     }
     
-    .mobile-drawer {
-        width: 90%;
-        max-width: 240px;
-        padding: 75px 14px 20px;
-    }
-    
-    .drawer-nav-links a {
-        font-size: 1rem;
+    .drawer-close svg {
+        width: 16px;
+        height: 16px;
     }
 }
 
@@ -1213,18 +1243,26 @@ button, .btn-primary, .btn-outline, .mobile-menu-btn {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* Prevent text selection on interactive elements for better mobile UX */
+button, .btn-primary, .btn-outline, .nav-links a, .mobile-menu-btn {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 /* Global scrollbar styling - only visible on non-mobile */
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-radial-mid);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--purple-secondary);
-    border-radius: 10px;
+@media (min-width: 998px) {
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: var(--bg-radial-mid);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--purple-secondary);
+        border-radius: 10px;
+    }
 }
 
 /* Mobile scrollbar hiding reinforcement */
@@ -1237,5 +1275,49 @@ button, .btn-primary, .btn-outline, .mobile-menu-btn {
         display: none;
         width: 0;
         background: transparent;
+    }
+}
+
+/* Landscape orientation handling for small mobile devices */
+@media (max-width: 480px) and (orientation: landscape) {
+    .model-right {
+        min-height: 45vh;
+        margin-top: 60px;
+    }
+    
+    #canvas-container {
+        height: 45vh;
+        min-height: 260px;
+    }
+    
+    .hero-card {
+        padding: 16px 20px;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .description {
+        font-size: 0.7rem;
+        margin-bottom: 16px;
+    }
+    
+    .cta-group {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .btn-primary, .btn-outline {
+        padding: 6px 14px;
+        font-size: 0.65rem;
+    }
+    
+    .navbar {
+        padding: 6px 14px;
+    }
+    
+    .logo {
+        font-size: 0.9rem;
     }
 }
